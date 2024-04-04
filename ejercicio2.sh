@@ -1,8 +1,13 @@
 #!/bin/bash
 
-# Solicitar al usuario que ingrese el nombre del nuevo usuario y del nuevo grupo
-read -p "Ingrese el nombre del nuevo usuario: " usuarioN
-read -p "Ingrese el nombre del nuevo grupo: " grupoN
+# Verificar que se proporcionen dos argumentos al script
+if [ "$#" -ne 2 ]; then
+    echo "Uso: $0 <nombre_del_usuario> <nombre_del_grupo>"
+    exit 1
+fi
+
+usuarioN=$1
+grupoN=$2
 
 # ¿Ya existe el usuario?
 if id "$usuarioN" &>/dev/null; then
@@ -32,3 +37,4 @@ sudo usermod -aG "$grupoN" "$usuarioN"
 sudo chown :"$grupoN" ejercicio1.sh
 sudo chmod 750 ejercicio1.sh
 echo "Permisos de ejecución asignados correctamente."
+
