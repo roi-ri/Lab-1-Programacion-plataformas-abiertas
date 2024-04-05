@@ -4,8 +4,8 @@
 print_help() {
     echo "Uso: $0 [-h] [-m MODE] [-d DATE]"
     echo "  -h: Imprimir este menú de ayuda"
-    echo "  -m MODE: Modo de funcionamiento del informe (opciones: servidor_web, base_de_datos, proceso_batch, aplicación, monitoreo)"
-    echo "  -d DATE: Especifica la fecha en el formato año-mes-día (ejemplo: 2024-03-08)"
+    echo "  -m: Modo de funcionamiento del informe (opciones: servidor_web, base_de_datos, proceso_batch, aplicación, monitoreo)"
+    echo "  -d: Especifica la fecha en el formato año-mes-día (ejemplo: 2024-03-08)"
     exit 0
 }
 
